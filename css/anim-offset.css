@@ -1,0 +1,124 @@
+body {
+  font-family: 'Roboto', arial, sans-serif;
+  color: #11c5bf;
+  font-weight: bold;
+  background-color: #59347D;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: table;
+  height: 40em;
+  width: 100%;
+}
+
+.container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+ul.images-container {
+  position: relative;
+  overflow: hidden;
+}
+
+ul.images-container li {
+  float: left;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+ul.images-container li div {
+  height: 150px;
+}
+
+img {
+  height: 150px;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.table > * {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+button, .tooltip{
+  min-width: 130px;
+  display: inline-block;
+  width: 100%;
+  margin: 15px auto;
+  padding: 15px;
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: bolder;
+  border: none;
+}
+
+.tooltip p {
+  display: inline-block;
+  width: 130px;
+  height: auto;
+  font-size: 11.5px;
+}
+
+button {
+  color:#59347D;
+  background-color: #05D215;
+  cursor: pointer;
+}
+
+.right-items {
+  position: relative;
+  z-index: 2;
+  display: block;
+  float: right;
+  width: 27%;
+  margin-right: 3%;
+}
+
+.left-items {
+  position: relative;
+  z-index: 3;
+  display: block;
+  float: left;
+  width: 67%;
+  margin-left: 3%;
+}
+
+.shopping-cart {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 45%;
+  border: 1px solid;
+  padding: 5%;
+  margin: 4%;
+}
+
+.img-clone {
+  top: 10px;
+  left: 10px;
+  display: block;
+  position: absolute;
+  z-index: 9999;
+}

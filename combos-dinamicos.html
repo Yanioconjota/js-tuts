@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>Combos Dinámicos</title>
+  <link rel="stylesheet" type="text/css" href="css/select.css">
+</head>
+<body>
+	<div class="table">
+		<div>
+			<select name="select" id="idSelect">
+				<option value="-1">Seleccione una opción</option>
+			</select>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	//Se define la función comboDinamico
+
+	var comboDinamico = function(){
+
+		return {
+
+			// Creamos un objeto, que está contenido dentro de return {}
+
+			select : {},
+
+			// Icializamos el objeto
+
+			init : function() {
+
+				//El objeto es this y lo almacenamos en una variable
+
+				var app = this;
+
+					//Aquí almacenamos la id con la que vamos a trabajar
+
+					app.select = $("#idSelect");
+
+					//Se genera un callback que se lo pasa como argumento a esta función
+
+					app.getDataFromJSON(function(respuestaJSON){
+					app.llenarCombo(respuestaJSON);
+					});
+
+			},
+
+			// Recibe un callback que se ejecuta cuqando se obtuvo la respuesta
+
+			getDataFromJSON : function(callback){
+
+				$.getJSON('/js-tuts/json/options.json', function(respuestaJSON){
+
+					callback(respuestaJSON);
+
+				})
+
+			},
+
+			//se crea la función que llena el combo con el contenido del JSON
+			//Definiendo como parametro los objetos del array en el archivo JSON
+
+			llenarCombo : function (arrayObjetos){
+
+				// Se almacena el objeto
+
+				var app = this;
+
+				// Se define la variable resultados como un array vacío
+
+				var resultados = [];
+
+
+				// Realiza un ciclo que busca el KEY y VALUE dentro del archivo en la posición i
+
+				for (var i in arrayObjetos) {
+					
+					resultados.push(
+
+						// Crea la etiqeuta <option/> con los valores del objeto
+
+						$("<option/>")
+							.val(arrayObjetos[i].value)
+							.html(arrayObjetos[i].innerHtml)
+
+					);
+
+				}
+
+				// Busca resultados y los agrega la etiqueta <option> dentro de la id seleccionada
+
+				for (var i in resultados) {
+
+					app.select.append(resultados[i])
+
+				}
+
+			}
+
+		}
+
+	}
+
+	// Ejecuta comboDinamico cunado el documento esté cargado.
+	// En este caso se almacena como una variable para poder utilizarlo si se requiere
+
+	$(document).ready(function(){
+		
+		var objetoNombre = comboDinamico();
+
+		objetoNombre.init();
+
+	});
+	</script>
+</body>
+</html>

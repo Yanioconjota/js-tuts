@@ -1,0 +1,18 @@
+[
+	{
+		"id" : "001",
+		"nombre" : "Freddy Kruegger"
+	},
+	{
+		"id" : "002",
+		"nombre" : "Jason Voorhees"
+	},
+	{
+		"id" : "003",
+		"nombre" : "Cpt. Elliot Spencer a.k.a. Pinhead"
+	},
+	{
+		"id" : "004",
+		"nombre" : "Thomas Hewitt a.k.a. Leatherface"
+	}
+]

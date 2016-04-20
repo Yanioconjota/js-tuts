@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<title>Show more/less</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/showmoreless.css">
+</head>
+<body>
+	<div class="table">
+		<div>
+			<div class="wrapper">
+				<div class="col">
+					<div class="table">
+						<div>
+							<p class="main-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.
+								<span class="oculto">Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</span>
+								<a class="show-link" href="#"></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="table">
+						<div>
+							<p class="main-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.
+								<span class="oculto">Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</span>
+								<a class="show-link" href="#"></a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="table">
+						<div>
+							<p class="main-text">
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								consequat.
+								<span class="oculto">Duis aute irure dolor in reprehenderit in voluptate velit esse
+								cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+								proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+								</span>
+								<a class="show-link" href="#"></a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			var showLink = $(".show-link")
+
+			$(".oculto").hide();
+          showLink.html("<i class='fa fa-arrow-down'></i> LEER MÁS");
+
+          showLink.click(function() {
+            if (this.className.indexOf('clicked') != -1 ){
+              $(this).prev().slideUp(500);
+              $(this).removeClass('clicked');
+              $(this).html("<i class='fa fa-arrow-down'></i> LEER MÁS");
+              //$(this).prev().addClass('oculto');
+            } else {
+              $(this).addClass('clicked');
+              $(this).prev().removeClass('oculto').slideDown(500);
+              $(this).html("<i class='fa fa-arrow-up'></i> OCULTAR");
+              var pos = $(this).offset().top;
+              $(this).prev().animate({ scrollTop: pos }, 600);
+          }
+      });
+		});
+	</script>
+</body>
+</html>

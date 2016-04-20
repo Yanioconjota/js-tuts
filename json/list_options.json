@@ -1,0 +1,26 @@
+[
+	{
+		"innerHtml" : "List Option red",
+		"color" : "#cd0a0a"
+	},
+
+	{
+		"innerHtml" : "List Option blue",
+		"color" : "#0097d0"
+	},
+
+	{
+		"innerHtml" : "List Option yellow",
+		"color" : "#EEFF03"
+	},
+
+	{
+		"innerHtml" : "List Option green",
+		"color" : "#60FF00"
+	},
+
+	{
+		"innerHtml" : "List Option pink",
+		"color" : "#FF00E9"
+	}
+]

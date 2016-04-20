@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Social Challenge JavaScript</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="container">
+	<h1>Hello</h1>
+	<div>
+		<p>Follow us in:</p>
+		<nav class="social-icons"></nav>
+		<p>The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+		<p>and remember to follow us in:</p>
+		<nav class="social-icons"></nav>
+	</div>
+</div>
+
+<h1></h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var socialMedia = {
+			facebook : 'https://www.facebook.com/geekdotcom',
+			twitter : 'https://twitter.com/DepressedDarth',
+			ninegag : 'http://9gag.com/u/yanioconjota/posts'
+		};
+		var social = function(){
+			var output = '<ul>';
+			var myList = document.querySelectorAll('.social-icons');
+
+			for (var key in arguments[0]){
+				output += '<li><a href="' + socialMedia[key] + '" target="_blank">'+'<img src="img/' + key + '.svg" alt="icon for ' + key + '">'+'</a></li>';
+			}
+
+			output += '</ul>';
+
+			for (var i = myList.length - 1; i >= 0; i--) {
+				myList[i].innerHTML = output;
+			};
+
+		}(socialMedia);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="css/random-color.css">
+<meta charset="utf-8"/>
+<title>Random Colors on click</title>
+</head>
+<body>
+	<div class="table">
+		<div>
+			<ul>
+				<li data-value="#FF5063"><a href="javascript:void(0)">Change background color on click!</a></li>
+				<li data-value="#59347D"><a href="javascript:void(0)">Change background color on click!</a></li>
+				<li data-value="#05D215"><a href="javascript:void(0)">Change background color on click!</a></li>
+				<li data-value="#FFCE5D"><a href="javascript:void(0)">Change background color on click!</a></li>
+			</ul>
+			<button>RESET STYLES HERE!</button>
+		</div>
+	</div>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(function() {
+
+  		var bodyColor   = $("body");
+
+  		var toggleList 	=	$("ul").find("li");
+
+  		var resetButton = $("button");
+
+  		toggleList.bind("click",function(){
+
+  			var dataValue = $(this).attr("data-value");
+
+  			bodyColor.css("background-color",dataValue);
+
+  			bodyColor.addClass("animate");
+
+  			resetButton.addClass("animate");
+
+  			resetButton.css({
+  				"color"		: dataValue,
+  				"display"	: "inline-block"
+  			});
+
+  		});
+
+  		resetButton.bind("click",function(){
+  			bodyColor.css("background-color","black");
+  			resetButton.css("display","none");
+  		});
+
+  	});
+  </script>
+</body>
+</html>

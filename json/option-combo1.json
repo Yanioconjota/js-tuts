@@ -1,0 +1,18 @@
+[
+	{
+		"id" : "001",
+		"nombre" : "Marcelus Wallace"
+	},
+	{
+		"id" : "002",
+		"nombre" : "Vincent Vega"
+	},
+	{
+		"id" : "003",
+		"nombre" : "John McLane"
+	},
+	{
+		"id" : "004",
+		"nombre" : "Hans Gruber"
+	}
+]

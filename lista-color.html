@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+  <title>Combos Dinámicos</title>
+  <link rel="stylesheet" type="text/css" href="css/lista-color.css">
+</head>
+<body>
+	<div class="table">
+		<div>
+			<div class="container">
+				<ul id="impListaColor" class="etiquetaLista">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	
+	var listaColor = function(){
+
+		return {
+
+			etiquetaLista : {},
+
+			init : function(){
+
+				var objetoLista = this;
+
+				objetoLista.etiquetaLista = $(".etiquetaLista")
+
+				objetoLista.getDataFromJSON(function(respuestaJson){
+				objetoLista.llenarLista(respuestaJson);
+				})
+
+			},
+			
+			getDataFromJSON : function(callback){
+				$.getJSON('/js-tuts/json/list_options.json',function(respuestaJson){
+					callback(respuestaJson);
+				})
+			},
+
+			llenarLista : function(arrayObjetos){
+
+				var objetoLista = this;
+
+				var contenidoLista = [];
+
+				for (var i in arrayObjetos) {
+
+						objetoLista.etiquetaLista.append($("<li/>")
+							.html(arrayObjetos[i].innerHtml)
+							.css("color",arrayObjetos[i].color))
+
+				}
+				
+			}
+
+		}
+
+	}
+
+	$(document).ready(function(){
+
+		var varLista = listaColor();
+
+		varLista.init();
+
+	})
+
+
+	</script>
+</body>
+</html>

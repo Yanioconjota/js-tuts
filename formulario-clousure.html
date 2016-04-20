@@ -1,0 +1,93 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<form action="javascript:void(0)">
+	<div>
+		<span>Nombre:</span>
+		<input type="text" name="nombre" />
+	</div>
+	<div>
+		<span>Email:</span>
+		<input type="text" name="email" />
+	</div>
+	<div>
+		<span>Mensaje:</span>
+		<input type="text" name="mensaje" />
+	</div>
+	<input type="submit" />
+</form>
+
+<script type="text/javascript">
+
+	(
+		function(){
+
+			'use strict'
+
+			var GetMyForm = function(){
+
+				var settings = {
+					nombre : 'form input[name="nombre"]',
+					email : 'form input[name="email"]',
+					mensaje : 'form input[name="mensaje"]',
+					submitBtn : 'form input[type="submit"]'
+				}
+
+				return {
+
+					nombre : null,
+
+					email : null,
+
+					mensaje : null,
+
+					resultado : {},
+
+					init : function() {
+
+						var app = this;
+
+						app.nombre = $(settings.nombre);
+						app.email = $(settings.email);
+						app.mensaje = $(settings.mensaje);
+						app.submitBtn = $(settings.submitBtn);
+
+						return function(){
+
+							app.submitBtn.bind('click',function(){
+
+								app.validate (/[a-zA-Z0-9_]/, app.nombre);
+								app.validate (/[a-zA-Z0-9_]@/, app.email);
+								app.validate (/[a-zA-Z0-9_]/, app.mensaje);
+
+								console.log(app.resultado);
+
+							});
+
+						}()
+											
+					},
+
+					validate : function( regExp, element ){
+						//revisa que no hayn espacios vacíos
+						//campos alfabeticos
+						//que en email al menos tenga @
+
+						var app = this;
+
+						app.resultado[element.attr('name')] = regExp.test(element.val());
+
+
+					}
+
+				}
+			}
+
+			$(document).ready( function(){
+
+				var MiForm = GetMyForm().init();
+
+			});
+
+		}()
+	)
+
+</script>

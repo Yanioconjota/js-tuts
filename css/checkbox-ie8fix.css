@@ -1,0 +1,105 @@
+body {
+  font-family: 'Roboto', arial, sans-serif;
+  color: #11c5bf;
+  font-weight: bold;
+  background-color: #371b52;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.table > * {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+form {
+  width: 100%;  
+}
+
+.pull-left {
+  float: left;
+  padding: 15px;
+}
+
+.container {
+  display: inline-block;
+  margin: 0 auto;
+  height: auto;
+}
+
+ul {
+  display: inline-block;
+  list-style: none;
+}
+
+li {
+  padding: 5px 0;
+}
+
+h3 {
+  color: #ff5063;
+}
+
+label {
+  vertical-align: bottom;
+  position: relative;
+  overflow: hidden;
+}
+
+.disabled {
+  color: #2C7F8F;
+}
+
+label .before {
+  display: inline-block;
+  margin: -2px -5px 0 0;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  float: left;
+  position: relative;
+  z-index: 9;
+}
+
+div.radio-group label span.before {
+ background: url(../img/icons.png) -23px -56px no-repeat;
+}
+
+div.radio-group label.checked span.before {
+ background: url(../img/icons.png) -23px -15px no-repeat;
+}
+
+div.checkbox-group label span.before {
+ background: url(../img/icons.png) -64px -56px no-repeat;
+}
+
+div.checkbox-group label.checked span.before {
+ background: url(../img/icons.png) -64px -15px no-repeat;
+}
+
+div.checkbox-group label span.before.disabled {
+ background: url(../img/icons-grayed.png) -64px -56px no-repeat;
+}
+
+div.checkbox-group label.checked span.before.disabled {
+ background: url(../img/icons-grayed.png) -64px -15px no-repeat;
+}
+
+input {
+  position: relative;
+  z-index: 1;
+  display: inline;
+  width: 0;
+  left: -15px;
+  top: -8px;
+}
+
+.disabledCheckbox{
+  color: #285F7D;
+}

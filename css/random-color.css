@@ -1,0 +1,77 @@
+body {
+  font-family: 'Roboto', arial, sans-serif;
+  color: #11c5bf;
+  font-weight: bold;
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.table > * {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+ul {
+	list-style: none;
+	    margin: 0;
+    padding: 0;
+}
+
+li,
+li a {
+	display: block;
+	margin: 15px;
+}
+
+li a {
+	padding: 15px;
+	color: #11c5bf;
+	text-decoration: none;
+}
+
+li[data-value="#FF5063"] a {
+	background-color: #FF5063; color:#FFCE5D;
+}
+
+li[data-value="#59347D"] a {
+	background-color: #59347D; color:#FF5063;
+}
+
+li[data-value="#05D215"] a {
+	background-color: #05D215; color:#59347D;
+}
+
+li[data-value="#FFCE5D"] a {
+	background-color: #FFCE5D; color:#05D215;
+}
+
+.animate {
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+}
+
+
+button {
+	color: white;
+	display: none;
+	width: 30%;
+	margin: 0 auto;
+	padding: 15px;
+	font-family: 'Roboto', arial, sans-serif;
+	font-weight: bolder;
+	border: none;
+	background-color: #9A9A9A;
+	cursor: pointer;
+}

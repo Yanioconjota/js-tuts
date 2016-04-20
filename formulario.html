@@ -1,0 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<form id="frmContact" name="frmContact" method="post" action="javascript:validacionCampos ">
+	<fieldset id="personalInfo" >
+		<legend><strong>Información Personal</strong></legend>
+		<p>
+			<label for="nombre">Nombre:</label>
+			<input name="nombre" type="text" id="nombre" tabindex="10"/>
+		</p>
+		<p>
+			<label for="email">Email:</label>
+			<input name="email" type="text" id="email" tabindex="20"/>
+		</p>
+		<p>
+			<label for="mensaje">Mensaje:</label>
+			<textarea></textarea>
+		</p>
+		<p><span id="errorMsg"></span></p>
+	<input type="submit" name="submitBtn" id="submitBtn" value="send"  tabindex="30" />
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+	function validacionCampos(){
+		document.getElementById("frmContact").onsubmit = function(){
+			if (document.getElementById("email").value=="") {
+				document.getElementById("errorMsg").innerHTML = "Debe completar este campo para continuar";
+				return false;
+			} else {
+				document.getElementById("errorMsg").innerHTML="";
+			}
+		};
+	}
+
+	window.onload = function(){
+		validacionCampos();
+	}
+</script>

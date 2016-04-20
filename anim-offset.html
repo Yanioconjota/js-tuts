@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jQuery Animations</title>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="css/anim-offset.css">
+	</head>
+	<body>
+		<div class="left-items">
+			<div class="wrapper">
+				<div class="container">
+					<ul class="images-container">
+						<li>
+							<div>
+								<a href="#"><img src="img/001.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/002.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/003.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/004.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/005.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/006.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/007.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/008.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/001.jpg"></a>
+							</div>
+						</li>
+						<li>
+							<div>
+								<a href="#"><img src="img/002.jpg"></a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+		<div class="right-items">
+			<div class="wrapper">
+				<div class="container">
+					<h3>Shopping Cart</h3>
+					<div class="shopping-cart"></div>
+				</div>
+			</div>
+		</div>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript">;
+			$(document).ready(function(){
+
+				var shopItems = $(".images-container");
+
+				shopItems.find("a").bind("click",function(e){
+
+					e.preventDefault();
+
+					var link 		 		= $(this);
+
+					var	img  		 		= link.find("img");
+
+					// Creo una copia de la imagen
+
+					var imgClone 		= img.clone().appendTo($(".left-items")).addClass("img-clone").css("top","26%");
+
+					// Obtengo las coordenadas de la imagen y del lugar de destino
+
+					var imgCords 		= img.offset();
+
+					var target	 		= $(".shopping-cart");
+
+					var targetCords = target.offset();
+
+					imgClone.animate({
+						"left"    		: targetCords.left,
+						"top"     		: targetCords.top,
+						"margin"  	  : "2%",
+						"padding-top" : "4%",
+						"width"   		: "+=7%",
+						"height"  		: "+=7%"
+					});
+					console.log(targetCords);
+				});
+
+			});
+		</script>
+	</body>
+</html>

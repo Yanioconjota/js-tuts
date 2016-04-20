@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RegExp Replace Tut</title>
+	<link rel="stylesheet" type="text/css" href="css/anim-offset.css">
+</head>
+<body>
+<div class="table">
+	<p></p>
+</div>
+
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var pText  = $("p");
+		var nombre = "DAVALOS, RAMIRO ALEJANDRO(MT11266755) nacio en  argentina (el 31 de enero de 1967)";
+		var regExp = nombre.replace(/ *\([^)]*\) /g, " ");
+		pText.html(regExp);
+		console.log(regExp);
+	});
+</script>
+</body>
+</html>

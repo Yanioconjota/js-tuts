@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="css/droidedit.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+    <div class="navbar-wrapper">
+      <nav class="navbar navbar-primary navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Javascript for cats</h1>
+          <p class="blockquote">
+            <b>An introduction for new programmers</b><br>
+            <em>So easy your human companion could do it too!</em>
+          </p>
+          <p>
+            JavaScript is a programming language or, in other words, a means by which a computer is instructed to do things. Just the same as one controls humans with hisses and meows, one controls computers with statements written in a programming language. All web browsers understand JavaScript and you can take advantage of that to make web pages do crazy things!
+          </p>
+          <p>
+            JavaScript started as a way to make web pages more interactive. Nowadays JavaScript runs in more places than just web browsers — it runs on web servers, phones and even robots! This page will teach you some JavaScript basics so that you can get up and running in no time*.
+          </p>
+          <p>
+            <em>* Actual time: more than none. Probably an hour or two. Also since you are a cat you are less likely to run and more likely to lay around in the sun</em>
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <img src="img/substack-cats.png" alt="" class="img-responsive">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-6">
+          <h1>Don't be a scaredy-cat</h1>
+          <p>You will always land on your feet — even when programming! Unlike pawing over a glass of water on your laptop, nothing in these tutorials will damage your computer in any way, even if you mistype a command or click the wrong button. Like cats, computer programmers make mistakes all time: misspelling things, forgetting quotes or brackets, and being forgetful of how basic functions (and yarn, lasers) work. Programmers care more about making it work eventually rather than trying to make it work the very first time. The best way to learn is by making mistakes!</p>
+          <p>So don't be a scaredy-cat! The absolute worst thing that will happen is that you might have to refresh this page in your web browser if you get stuck. Don't worry though, this will happen very rarely.</p>
+        </div>
+        <div class="col-sm-6">
+          <img src="img/yarnify.png" alt="" class="img-responsive">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <h1># The basics</h1>
+          <p>There is JavaScript running on this page right now. Let's play around with it a little. For the sake of simplicity I'll assume you are using Google Chrome to read this page (if you aren't it's probably easier on both of us if you follow along with Chrome).</p>
+          <p>First, right click anywhere on the screen and hit <b>Inspect Element</b>, then click on the <b>Console</b> tab. You should see a thingy that looks like this:</p>
+          <img src="img/console.gif" alt="" class="img-responsive center-block">
+          <p>This is a console, otherwise known as a "command line" or "terminal". Basically it's a way to type one thing at a time into a computer and immediately get the computers answer back. They are super useful as a learning tool (I still use the console nearly every day that I'm coding).</p>
+          <p>The console does some pretty cool stuff. Here I have started to type something and the console is helping me out by giving me a list of all the possible things I could continue to type! Another thing you could do is type <span class="pre">1 + 1</span> into the console and then hit the <span class="pre">Enter</span> key and watch what happens.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <h1># Strings</h1>
+          <p>Since I am a cat I want to replace every instance of the word <span class="pre">dog</span> on the Internet with <span class="pre">those blasted dogs</span>. First go into your console and type in a few sentences that contain the word <span class="pre">dog</span> at least once. In JavaScript a bunch of letters, numbers, words or anything else is known as a <b>String</b> (as in a string of characters). Strings have to begin AND end with a quotation mark. Single <span class="pre">'</span> or double <span class="pre">"</span> is fine, just make sure you use the same at the beginning as you do at the end.</p>
+          <img src="img/console-strings.gif" alt="" class="img-responsive center-block">
+          <p>See the nasty error message? Don't worry - you didn't break any laws. <b>SyntaxError ILLEGAL</b> is just the way it sounds when robots tell you that your program has a problem. The first two sentences had matching quotation marks at the beginning and end, but when I mixed single and double quotation marks it freaked out on me.</p>
+          <p>OK, to fix up one of these sentences (by replacing <span class="pre">dog</span> with our enhanced version) we have to first save the original sentence so that we can call it up later when we do our replacing magic. Notice how the string gets repeated in red when we type it into the console? This is because we haven't told it to save the sentence anywhere so it just gives it right back (or it gives us an Error back if we messed something up).</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <h1># Values and variables</h1>
+          <p><b>Values</b> are the simplest components in JavaScript. <span class="pre">1</span> is a value, <span class="pre">true</span> is a value, <span class="pre">"hello"</span> is a value, <span class="pre">function() {}</span> is a value, the list goes on! There are a handful of different types of values in JavaScript but we don't need to go over them all right away — you will learn them naturally the more you code!</p>
+          <p>To store values we use things called <b>variables</b>. The word 'variable' means 'can change' and is used because variables can store many different types of values and can change their value many times. They are pretty much like mailboxes. We put something in a variable, like our sentence, and then give the variable an address that we can use to look up the sentence later. In real life mailboxes have to have PO Box numbers but in JavaScript you usually just use lowercase letters or numbers without any spaces.</p>
+          <img src="img/console-variables.gif" alt="" class="img-responsive center-block">
+          <p><span class="pre">var</span> is shorthand for variable and the <span class="pre">=</span> means store the thing on the right-hand side in the thing on the left-hand side. Also as you can see, now that we are storing our sentence in a variable the console doesn't just return our sentence right away, but instead gives us <span class="pre">undefined</span> which means <em>there was nothing to return.</em></p>
+          <p>If you simply type a variable name into the console it will print out the value stored in that variable. A note about variables is that by default they go away when you switch to a different page. If I were to hit the Refresh button in Chrome, for example, my <span class="pre">dogSentence</span> variable would get wiped and it would be like it never existed. But don't worry about this too much for now — you can just hit the up or down arrows on your keyboard while in the console to go through everything you've entered in recently.</p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <h1># Functions</h1>
+          <p>Now that we have our sentence stored in a variable, let's change a word stored in it! We can do this by performing a <em>function</em>. <em>Function</em>s are a type of value that, well, serve a specific function (AKA purpose or action) for us. Calling them "actions" sounded weird I guess so they went with the word "function" instead.</p>
+          <p>JavaScript has a function called <span class="pre">replace</span> that does exactly what we want! Functions take in any number of values in their parentheses (zero, one or many) and return either nothing (<span class="pre">undefined</span>) or the changed string. The <span class="pre">replace</span> function is available to use on any strings and takes in two values: the characters to take out and the characters to swap in. It gets confusing to describe these things so here is a visual example:</p>
+          <img src="img/console-replace.gif" alt="" class="img-responsive center-block">
+          <p>Notice how the value of <span class="pre">dogSentence</span> is the same even after we run <span class="pre">replace</span> on it? This is because the <span class="pre">replace</span> function, (and most JavaScript functions for that matter) takes the value we give it and <b>returns a new value</b>, without modifying the value we passed in. Since we didn't store the result (there is no <span class="pre">=</span> on the left side of the replace function) it just printed out the return value in our console.</p>
+          <pre class="replace"><p></p><p></p></pre>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-12">
+          <pre class="the-basics"></pre>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/droidedit.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

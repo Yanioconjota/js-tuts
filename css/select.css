@@ -1,0 +1,18 @@
+.table {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: table;
+}
+
+.table > * {
+  display: table-cell;
+  vertical-align: middle;
+
+}
+
+#idSelect {
+  width: 60%;
+  margin: 0 auto;
+  display: block;
+}

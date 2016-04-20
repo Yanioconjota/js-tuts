@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS Checkbox & Radio</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=8" />
+	<link rel="stylesheet" type="text/css" href="css/checkbox-ie8fix.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<div class="table">
+		<div>
+			<form name="myForm" id="myForm" action="javascript:void(0)" method="post">
+				<div class="container">
+					<div class="radio-group pull-left" id="radio-group">
+						<h3>Do you have any pets?</h3>
+						<ul>
+							<li>
+								<label for="radio-1">
+									<span class="before"></span>
+									<input type="radio" name="radio" id="radio-1" value="yes" />
+									<span>Yes</span>
+								</label>
+							</li>
+							<li>
+								<label for="radio-2">
+									<span class="before"></span>
+									<input type="radio" name="radio" id="radio-2" value="no" />
+									<span>No</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+					<div class="checkbox-group pull-left">
+						<h3>Which pets do you have?</h3>
+						<ul>
+							<li>
+								<label for="check-1">
+									<span class="before"></span>
+									<input type="checkbox" name="checkbox" id="check-1" value="dog" />
+									<span>Dog</span>
+								</label>
+							</li>
+							<li>
+								<label for="check-2">
+									<span class="before"></span>
+									<input type="checkbox" name="checkbox" id="check-2" value="cat" />
+									<span>Cat</span>
+								</label>
+							</li>
+							<li>
+								<label for="check-3">
+									<span class="before"></span>
+									<input type="checkbox" name="checkbox" id="check-3" value="lizard" />
+									<span>Lizard</span>
+								</label>
+							</li>
+							<li>
+								<label for="check-4">
+									<span class="before"></span>
+									<input type="checkbox" name="checkbox" id="check-4" value="bird" />
+									<span>Bird</span>
+								</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		function fixIe(){
+			$("label").bind("click",function(){
+
+				var checked = $(this).find("input");
+
+				if (checked.is(":checked")){
+
+					if (checked.attr("type")=="radio") {
+						checked.closest(".radio-group").find("label").removeClass("checked");
+					};
+
+					$(this).addClass("checked");
+				} else {
+					$(this).removeClass("checked");
+				};
+			})
+		};
+
+		function enableCheckbox(){
+
+			var disabledGroup  = $(".checkbox-group").find("input[type=checkbox]")
+
+			var grayedText 		 = $(".checkbox-group").children();
+
+			var grayedElements = $(".checkbox-group").find("span.before")
+
+			var sayYes 				 = $("label").find("input[type=radio]");
+
+			disabledGroup.prop("disabled",true);
+
+			grayedText.eq(1).addClass("disabledCheckbox");
+
+			grayedElements.addClass("disabled");
+
+			$(sayYes).bind("click",function(){
+
+				var itemToggle  = $(this);
+
+				if($(itemToggle).val()=="yes"){
+
+					disabledGroup.prop("disabled",false);
+
+					grayedText.eq(1).removeClass("disabledCheckbox");
+
+					grayedElements.removeClass("disabled");
+
+				}else{
+
+					disabledGroup.prop("disabled",true);
+
+					grayedText.eq(1).addClass("disabledCheckbox");
+
+					grayedElements.addClass("disabled");
+
+				}
+
+			});
+
+		}
+
+		$( document ).ready(function() {
+		  fixIe();
+			enableCheckbox();		  
+		});
+	</script>
+</body>
+</html>
