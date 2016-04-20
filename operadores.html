@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <title>Training Git | JavaScript</title>
+</head>
+<body>
+
+  <!-- AREA de un triangulo base x altura / 2 -->
+  <fieldset>
+    <legend>Area Triángulo</legend>
+    <form action="javascript:void(0)" data-action="area">
+      <input type="number" name="base" value="0"/>
+      <input type="number" name="altura" value="0"/>
+      <input type="submit" value="CALCULAR">
+    </form>
+  </fieldset>
+  
+  <br>
+  
+  <!-- PAR O IMPAR verificar si numero es par o impar-->
+  <fieldset>
+    <legend>Par o Impar</legend>
+    <form action="javascript:void(0)" data-action="paroimpar">
+      <input type="number" name="numero" value="0" />
+      <input type="submit" value="COMPROBAR">
+    </form>
+  </fieldset>
+  
+  <br>
+  
+  <!-- AUMENTAR incrementar el font size del textarea al doble de su tamaño-->
+  <fieldset>
+    <legend>Aumentar</legend>
+    <form action="javascript:void(0)" data-action="aumentar">
+      <textarea style="font-size:10px; resize: none;" name="texto" rows="4" cols="50">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</textarea>
+      <input type="submit" value="AUMENTAR">
+    </form>
+  </fieldset>
+  
+  <script type="text/javascript">
+  
+  var getRepo = function(){
+    var pre = document.createElement('pre');
+    return {
+     
+      area : function( formulario ) {
+        var base   = formulario[0].base.value,
+            altura = formulario[0].altura.value,
+            area;
+        if(isNaN(base) == false && isNaN(altura) == false && base > 0 && altura > 0){
+          area = (base * altura)/2;
+          area = 'es ' + area;
+        } else {
+          area = 'no se puede calcular';
+        }
+        console.log('El área del tríangulo ' + area);
+        //console.log(formulario[0].base.value);
+        pre.innerHTML = 'El área del tríangulo ' + area;
+        formulario[0].appendChild(pre);
+
+      },
+  
+      paroimpar : function( formulario ) {
+        var numero    = formulario[0].numero.value,
+            resultado;
+        if (isNaN(numero) == false && numero % 2 == 0) {
+          resultado = 'El numero ' + numero + ' es par';
+        } else {
+          resultado = 'El numero ' + numero + ' es impar';
+        }
+        if (numero == 0) {
+          resultado = 'Debes introducir un número diferente a ' + numero;
+        }
+        console.log(resultado, formulario[0]);
+        pre.innerHTML = resultado;
+        formulario[0].appendChild(pre);
+
+        
+      },
+  
+      aumentar : function( formulario ) {
+        var numero,
+        fontSizeVal = formulario[0].texto.attributes.style.value,
+        fontSize,
+        incremento,
+        incrementoPosta;
+        // Obtengo valor del atributo
+        fontSize = fontSizeVal.match(/\d{1,}/g);
+        incrementoPosta = parseInt(fontSize[0])*2;
+        // Reemplazo valor del atributo
+        fontSizeVal = fontSizeVal.replace(/\d{1,}/g,incrementoPosta);
+        // Se lo paso al elemento del DOM
+        formulario[0].texto.attributes.style.value = fontSizeVal;
+        console.log(incrementoPosta,formulario,formulario[0].texto.attributes.style.value);
+        pre.innerHTML = 'el font-size del textarea aumentó a '+incrementoPosta+'px';
+        formulario[0].appendChild(pre);
+      }
+    }
+  }
+  
+  $(document).ready(function(){
+    
+    var repo = getRepo();
+  
+    $("input[type='submit']").bind('click',function(){
+      var form = $(this).parent();
+      repo[form.attr('data-action')](form);
+
+    });
+  
+  } );
+  
+  </script>
+</body>
+</html>
